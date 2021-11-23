@@ -1,0 +1,190 @@
+@import "variables";
+@import "config";
+
+.header {
+  width: 80vw;
+  border-radius: 1em;
+  background-color: $Darkblue;
+  text-align: center;
+  margin: 0 auto;
+  @include mobile-view {
+    margin-right: 2em;
+    height: 70vh;
+  }
+  &-top {
+    width: 100%;
+    background-color: $Blue;
+    border-radius: 1em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: left;
+    padding: 1em 2em;
+    color: white;
+    font-weight: 100;
+    @include mobile-view {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    & .title {
+      color: $PaleBlue;
+      font-weight: lighter;
+      font-size: 0.5em;
+      @include mobile-view {
+        font-weight: lighter;
+      }
+    }
+    & .name {
+      font-weight: lighter;
+      font-size: 1.25rem;
+      @include mobile-view {
+        font-weight: lighter;
+        font-size: 2.7rem;
+      }
+    }
+    & .image {
+      width: 5.5rem;
+      height: 5.5rem;
+      border-radius: 50%;
+      border: 3px solid white;
+      margin-right: 0.5em;
+      & img {
+        width: 100%;
+        height: 100%;
+      }
+      @include mobile-view {
+        width: 9rem;
+        height: 9rem;
+        margin-right: 0;
+        margin-bottom: 1em;
+      }
+    }
+  }
+  &-duration {
+    display: flex;
+    padding: 2em;
+    justify-content: space-between;
+    text-transform: capitalize;
+    color: $Desaturatedblue;
+    @include mobile-view {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1em 0 0 2em;
+    }
+
+    & h3 {
+      @include mobile-view {
+        font-weight: lighter;
+        margin-bottom: 0.5em;
+      }
+      &:hover {
+        color: white;
+        cursor: pointer;
+      }
+    }
+  }
+}
+.cards {
+  @include mobile-view {
+    display: grid;
+    grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+    grid-gap: 2em;
+    height: 70vh;
+  }
+  & .card {
+    background-color: $Lightred-work;
+    width: 80vw;
+    border-radius: 1em;
+    text-align: center;
+    margin: 1.7em auto;
+    position: relative;
+    overflow: hidden;
+    @include mobile-view {
+      margin: 0;
+      width: 23vw;
+    }
+    & .icon {
+      position: relative;
+      right: -40%;
+      top: -1rem;
+    }
+    &-content {
+      width: 100%;
+      background-color: $Darkblue;
+      border-radius: 1em;
+      padding: 2em 1em;
+      margin-top: -1em;
+      color: white;
+      &:hover {
+        background-color: $Blue;
+        cursor: pointer;
+      }
+      & .top {
+        display: flex;
+        justify-content: space-between;
+        &-title {
+          font-size: 1.3rem;
+        }
+        &-circles {
+          width: 2rem;
+          height: 0.5rem;
+          & path:hover {
+            fill: white;
+          }
+        }
+      }
+      & .bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 1em;
+        @include mobile-view {
+          flex-direction: column;
+          align-items: flex-start;
+          margin: 0;
+        }
+        &-title {
+          font-size: 2.4rem;
+          font-weight: 500;
+        }
+        &-duration {
+          color: $PaleBlue;
+          font-size: 1.2em;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
+
+.cards .play {
+  background-color: $Softblue-play;
+}
+.cards .study {
+  background-color: $Lightred-study;
+}
+.cards .exercise {
+  background-color: $Limegreen-exercise;
+  @include mobile-view {
+    .card-content {
+      margin-top: 0.3em;
+    }
+  }
+}
+.cards .social {
+  background-color: $Violet-social;
+  & .card-content {
+    margin-top: -2em;
+    @include mobile-view {
+      margin-top: -2.5em;
+    }
+  }
+}
+.cards .self-care {
+  background-color: $Softorange-selfcare;
+  @include mobile-view {
+    .card-content {
+      margin-top: -0.8em;
+    }
+  }
+}
